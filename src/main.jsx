@@ -16,20 +16,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Router basename="/Layerflex">
         <Routes>
           <Route path="/" element={<App />} />
-
-          {/* Dynamic route for categories */}
           <Route path="/category/:categoryName" element={<CategoryPage />} />
-
-          {/* Explicit category routes so refresh works */}
-          <Route path="/category/marvel-models" element={<CategoryPage />} />
-          <Route path="/category/gaming-assets" element={<CategoryPage />} />
-          <Route path="/category/dc-characters" element={<CategoryPage />} />
-          <Route path="/category/cartoon-&-anime" element={<CategoryPage />} />
-
-          {/* Fallback route */}
           <Route path="*" element={<App />} />
         </Routes>
       </Router>
+
     </Provider>
   </React.StrictMode>
 )
