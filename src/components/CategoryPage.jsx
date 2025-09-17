@@ -1,8 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import ShoeCard from "../utils/ShoeCard";
 
-// ✅ Import your images
+// ✅ Marvel Images
 import ironMan from "../assets/Marvel/iron man DID3.jpg";
 import captainHydra from "../assets/Marvel/Captain Hydra.jpg";
 import thor from "../assets/Marvel/THOR.jpg";
@@ -12,6 +12,7 @@ import hawkeye from "../assets/Marvel/Hawkeye model.jpg";
 import blackPanther from "../assets/Marvel/black-panther-civil-war-armor-helmet-3d-printable-model-print-file-stl-do3d-printed-06.jpg";
 import doctorStrange from "../assets/Marvel/Doctor Strange.jpg";
 
+// ✅ Cartoon & Anime Images
 import naruto from "../assets/Cartoon/naruto.jpg";
 import sasuke from "../assets/Cartoon/sasuke-with-susanoo-and-aoda-3d-print-statue-naruto-shippuden-3d-model-obj-stl.jpg";
 import goku from "../assets/Cartoon/GOKU.jpg";
@@ -21,6 +22,7 @@ import zoro from "../assets/Cartoon/Zoro.jpg";
 import ichigo from "../assets/Cartoon/Ichigo.jpg";
 import kakashi from "../assets/Cartoon/Kakashi.webp";
 
+// ✅ Gaming Images
 import mario from "../assets/Gaming/Mario_Zbrush_View.jpg";
 import luigi from "../assets/Gaming/Luigi_Zbrush_View.jpg";
 import zelda from "../assets/Gaming/legend-of-zelda-link-3d-model-for-print.jpg";
@@ -30,6 +32,7 @@ import charizard from "../assets/Gaming/Charizard.jpg";
 import masterChief from "../assets/Gaming/Master Chef.jpg";
 import kratos from "../assets/Gaming/Kratos.webp";
 
+// ✅ DC Images
 import batmanKit from "../assets/DC/batman-kit.jpg";
 import supermanClarkKent from "../assets/DC/superman-clark-kent-3d-print-3d-model-obj-stl.jpg";
 import wonderWoman from "../assets/DC/diana-prince-wonder-woman-3d-model-stl.jpg";
@@ -40,7 +43,7 @@ import cyborg from "../assets/DC/Cyborg.jpg";
 import greenLantern from "../assets/DC/green lantern.webp";
 import shazam from "../assets/DC/Shazam.jpg";
 
-// ✅ Full categories with items
+// ✅ Categories with items
 const categories = [
   {
     title: "Marvel Model",
@@ -100,6 +103,7 @@ const categories = [
 const CategoryPage = () => {
   const { categoryName } = useParams();
 
+  // ✅ Find category from URL
   const category = categories.find(
     (cat) => cat.title.toLowerCase().replace(/\s+/g, "-") === categoryName
   );
@@ -110,7 +114,17 @@ const CategoryPage = () => {
 
   return (
     <div className="nike-container p-6">
-      <h2 className="text-2xl font-bold mb-6 text-black drop-shadow">{category.title}</h2>
+      {/* Back button */}
+      <Link to="/" className="text-blue-500 underline mb-4 inline-block">
+        ← Back to Categories
+      </Link>
+
+      {/* Category Title */}
+      <h2 className="text-2xl font-bold mb-6 text-black drop-shadow">
+        {category.title}
+      </h2>
+
+      {/* Items Grid */}
       <div className="grid items-center justify-items-center gap-7 lg:gap-5 mt-7 grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
         {category.items.map((item) => (
           <ShoeCard
