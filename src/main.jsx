@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import './index.css' // Tailwind CSS entry
+import './index.css'
 import { Provider } from 'react-redux'
 import Store from './app/Store'
 import { Toaster } from 'react-hot-toast'
@@ -16,8 +16,17 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Router basename="/Layerflex">
         <Routes>
           <Route path="/" element={<App />} />
+
+          {/* Dynamic route for categories */}
           <Route path="/category/:categoryName" element={<CategoryPage />} />
-          {/* ✅ Fallback route so unknown paths redirect to Home */}
+
+          {/* Explicit category routes so refresh works */}
+          <Route path="/category/marvel-models" element={<CategoryPage />} />
+          <Route path="/category/gaming-assets" element={<CategoryPage />} />
+          <Route path="/category/dc-characters" element={<CategoryPage />} />
+          <Route path="/category/cartoon-&-anime" element={<CategoryPage />} />
+
+          {/* Fallback route */}
           <Route path="*" element={<App />} />
         </Routes>
       </Router>
