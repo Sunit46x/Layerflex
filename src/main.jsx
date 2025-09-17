@@ -8,20 +8,17 @@ import { Toaster } from 'react-hot-toast'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import CategoryPage from './components/CategoryPage'
 
-// Import Layerflex page (create this file if it doesn't exist)
-import Layerflex from './Layerflex' 
-import NotFound from './components/NotFound' // optional 404 page
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={Store}>
       <Toaster position="top-center" reverseOrder={false} />
-      <Router>
+      {/* ✅ Add basename for GitHub Pages */}
+      <Router basename="/Layerflex">
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
-          <Route path="/Layerflex" element={<Layerflex />} /> {/* Added route */}
-          <Route path="*" element={<NotFound />} /> {/* Optional catch-all */}
+          {/* ✅ Fallback route so unknown paths redirect to Home */}
+          <Route path="*" element={<App />} />
         </Routes>
       </Router>
     </Provider>
