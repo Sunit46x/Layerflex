@@ -18,7 +18,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/category/:categoryName" element={<CategoryPage />} />
-          
           {/* 👇 fallback to App if no route matches */}
           <Route path="*" element={<App />} />
         </Routes>

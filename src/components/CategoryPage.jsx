@@ -29,7 +29,7 @@ import zelda from "../assets/Gaming/legend-of-zelda-link-3d-model-for-print.jpg"
 import link from "../assets/Gaming/Link.jpeg";
 import pikachu from "../assets/Gaming/Pikachu.jpg";
 import charizard from "../assets/Gaming/Charizard.jpg";
-import masterChief from "../assets/Gaming/Master Chef.jpg";
+
 import kratos from "../assets/Gaming/Kratos.webp";
 
 // ✅ DC Images
@@ -80,7 +80,7 @@ const categories = [
       { id: 4, title: "Link", img: link },
       { id: 5, title: "Pikachu", img: pikachu },
       { id: 6, title: "Charizard", img: charizard },
-      { id: 7, title: "Master Chef", img: masterChief },
+      // { id: 7, title: "Master Chef", img: masterChief },
       { id: 8, title: "Kratos", img: kratos },
     ],
   },
@@ -105,17 +105,25 @@ const CategoryPage = () => {
 
   // ✅ Find category from URL
   const category = categories.find(
-    (cat) => cat.title.toLowerCase().replace(/\s+/g, "-") === categoryName
+    (cat) =>
+      cat.title.toLowerCase().replace(/\s+/g, "-") === categoryName
   );
 
   if (!category) {
-    return <p className="text-center text-red-500 mt-10">Category not found!</p>;
+    return (
+      <p className="text-center text-red-500 mt-10">
+        Category not found!
+      </p>
+    );
   }
 
   return (
     <div className="nike-container p-6">
       {/* Back button */}
-      <Link to="/" className="text-blue-500 underline mb-4 inline-block">
+      <Link
+        to="/"
+        className="text-blue-500 underline mb-4 inline-block"
+      >
         ← Back to Categories
       </Link>
 
