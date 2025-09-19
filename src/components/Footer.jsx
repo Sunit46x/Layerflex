@@ -20,11 +20,7 @@ const Footer = ({ footerAPI: { titles, links } }) => {
             <h1 className="text-xl lg:text-lg md:text-base uppercase font-semibold">Categories</h1>
             <ul className="grid items-start gap-1">
               {links[1]?.map((link, j) => (
-                <li
-                  key={j}
-                  className="text-lg sm:text-md cursor-pointer hover:text-gray-300 transition-all"
-                >
-                  {/* ✅ Use Link instead of <a> */}
+                <li key={j} className="text-lg sm:text-md cursor-pointer">
                   <Link
                     to={`/category/${link.link.replace(/\s+/g, "-").toLowerCase()}`}
                   >
@@ -40,10 +36,7 @@ const Footer = ({ footerAPI: { titles, links } }) => {
             <h1 className="text-xl lg:text-lg md:text-base uppercase font-semibold">Company Info</h1>
             <ul className="grid items-start gap-1">
               {links[2]?.map((link, j) => (
-                <li
-                  key={j}
-                  className="text-lg sm:text-md cursor-pointer hover:text-gray-300 transition-all"
-                >
+                <li key={j} className="text-lg sm:text-md cursor-pointer">
                   {link.link}
                 </li>
               ))}
@@ -54,10 +47,24 @@ const Footer = ({ footerAPI: { titles, links } }) => {
           <div className="grid items-start gap-2">
             <h1 className="text-xl lg:text-lg md:text-base uppercase font-semibold">Social Media</h1>
             <ul className="flex items-center gap-4">
-              <li><a href="#" className="text-2xl hover:text-gray-300"><FaFacebook /></a></li>
-              <li><a href="#" className="text-2xl hover:text-gray-300"><FaInstagram /></a></li>
-              <li><a href="#" className="text-2xl hover:text-gray-300"><FaTwitter /></a></li>
+              <li>
+                <a href="#" className="text-2xl">
+                  <FaFacebook />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-2xl">
+                  <FaInstagram />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-2xl">
+                  <FaTwitter />
+                </a>
+              </li>
             </ul>
+
+            {/* Newsletter Form */}
             <form className="mt-4">
               <label htmlFor="email" className="block text-lg mb-2">Subscribe to our newsletter:</label>
               <div className="flex items-center gap-2">
@@ -70,7 +77,7 @@ const Footer = ({ footerAPI: { titles, links } }) => {
                 />
                 <button
                   type="submit"
-                  className="bg-white text-black px-5 py-3 rounded-md hover:bg-gray-200"
+                  className="bg-white text-black px-5 py-3 rounded-md"
                 >
                   Send
                 </button>
@@ -79,6 +86,7 @@ const Footer = ({ footerAPI: { titles, links } }) => {
           </div>
         </div>
 
+        {/* Footer Bottom */}
         <div className="mt-5 text-center">
           <p className="text-lg md:text-center">
             © {new Date().getFullYear()} Layer Flex All Rights Reserved.

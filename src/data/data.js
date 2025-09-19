@@ -347,7 +347,7 @@ const footerAPI = {
 
     // Categories
     [
-      { link: "Marvel Models" },
+     
       { link: "DC Characters" },
       { link: "Cartoon & Anime" },
       { link: "Gaming Assets" },
