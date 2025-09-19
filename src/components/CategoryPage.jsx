@@ -45,9 +45,21 @@ import shazam from "../assets/DC/Shazam.jpg";
 
 // ✅ Categories with items
 const categories = [
-  
   {
-    title: "Cartoons and Anime",
+    title: "Marvel Model",
+    items: [
+      { id: 1, title: "Iron Man", img: ironMan },
+      { id: 2, title: "Captain Hydra", img: captainHydra },
+      { id: 3, title: "Thor", img: thor },
+      { id: 4, title: "Hulk", img: hulk },
+      { id: 5, title: "Black Widow", img: blackWidow },
+      { id: 6, title: "Hawkeye", img: hawkeye },
+      { id: 7, title: "Black Panther", img: blackPanther },
+      { id: 8, title: "Doctor Strange", img: doctorStrange },
+    ],
+  },
+  {
+    title: "Cartoon & Anime",
     items: [
       { id: 1, title: "Naruto", img: naruto },
       { id: 2, title: "Sasuke", img: sasuke },
@@ -57,18 +69,10 @@ const categories = [
       { id: 6, title: "Zoro", img: zoro },
       { id: 7, title: "Ichigo", img: ichigo },
       { id: 8, title: "Kakashi", img: kakashi },
-      { id: 9, title: "Iron Man", img: ironMan },
-      { id: 2, title: "Captain Hydra", img: captainHydra },
-      { id: 3, title: "Thor", img: thor },
-      { id: 4, title: "Hulk", img: hulk },
-      { id: 5, title: "Black Widow", img: blackWidow },
-      { id: 6, title: "Hawkeye", img: hawkeye },
-      { id: 7, title: "Black Panther", img: blackPanther },
-      { id: 8, title: "Doctor Strange", img: doctorStrange }
     ],
   },
   {
-    title: "Gaming Characters",
+    title: "Gaming Assets",
     items: [
       { id: 1, title: "Mario", img: mario },
       { id: 2, title: "Luigi", img: luigi },
@@ -102,7 +106,7 @@ const CategoryPage = () => {
   // ✅ Find category from URL
   const category = categories.find(
     (cat) =>
-      cat.title.toLowerCase().replace(/\s+/g, "-").replace(/&/g, "and") === categoryName
+      cat.title.toLowerCase().replace(/\s+/g, "-") === categoryName
   );
 
   if (!category) {
