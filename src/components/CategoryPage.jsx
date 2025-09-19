@@ -2,15 +2,6 @@ import React from "react";
 import { useParams, Link } from "react-router-dom";
 import ShoeCard from "../utils/ShoeCard";
 
-// ✅ Marvel Images
-import ironMan from "../assets/Marvel/iron man DID3.jpg";
-import captainHydra from "../assets/Marvel/Captain Hydra.jpg";
-import thor from "../assets/Marvel/THOR.jpg";
-import hulk from "../assets/Marvel/hulk.jpg";
-import blackWidow from "../assets/Marvel/Black widow stl.jpg";
-import hawkeye from "../assets/Marvel/Hawkeye model.jpg";
-import blackPanther from "../assets/Marvel/black-panther-civil-war-armor-helmet-3d-printable-model-print-file-stl-do3d-printed-06.jpg";
-import doctorStrange from "../assets/Marvel/Doctor Strange.jpg";
 
 // ✅ Cartoon & Anime Images
 import naruto from "../assets/Cartoon/naruto.jpg";
@@ -45,19 +36,7 @@ import shazam from "../assets/DC/Shazam.jpg";
 
 // ✅ Categories with items
 const categories = [
-  {
-    title: "Marvel Model",
-    items: [
-      { id: 1, title: "Iron Man", img: ironMan },
-      { id: 2, title: "Captain Hydra", img: captainHydra },
-      { id: 3, title: "Thor", img: thor },
-      { id: 4, title: "Hulk", img: hulk },
-      { id: 5, title: "Black Widow", img: blackWidow },
-      { id: 6, title: "Hawkeye", img: hawkeye },
-      { id: 7, title: "Black Panther", img: blackPanther },
-      { id: 8, title: "Doctor Strange", img: doctorStrange },
-    ],
-  },
+  
   {
     title: "Cartoon & Anime",
     items: [
